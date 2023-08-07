@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+
+<body>
+    <form class="form" id="form">
+        <div class="form-control"></div>
+
+        <div>
+            Name: <input type="text" name="" id="username" required><b><span class="form-control">
+                </span></b>
+        </div>
+
+        <div>
+            Email: <input type="email" name="" id="email" required><b><span class="form-control"> </span></b>
+            <small>error</small>
+        </div>
+
+
+        <div>
+            Phone: <input type="number" name="" id="Phone" required><b><span class="form-control"></span></b>
+        </div>
+
+        <div>
+            Password: <input type="password" name="" id="password" required><b><span class="form-control">
+                </span></b>
+            <small>error</small>
+        </div>
+
+        <input class="but" type="submit" value="Submit">
+
+    </form>
+</body>
+<script src="index.js">
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const password = document.getElementById('password');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        validate();
+    })
+
+    const validate = () => {
+
+        const usernameVal = document.getElementById.value.trim();
+        const emailVal = document.getElementById.value.trim();
+        const phoneVal = document.getElementById.value.trim();
+        const passwordVal = document.getElementById.value.trim();
+
+        if (passwordVal == "sajjan") {
+            setSuccessMsg(password);
+        } else {
+            (!ispassword(password)); {
+                setErrorMsg(password, 'invalid');
+            }
+        }
+
+        if (email == "sajjan@123.com") {
+            setSuccessMsg(email, 'ok');
+        } else {
+            (!isemail(email)); {
+                setErrorMsg(email, 'invalid');
+            }
+        
+
+            function setErrorMsg(input, errormsgs) {
+                const formcontrol = input.parentElement;
+                const small = formcontrol.querySelector('small');
+                small.innertext = errormsgs;
+
+            }
+
+        }
+
+    }
+</script>
+
+</html>
